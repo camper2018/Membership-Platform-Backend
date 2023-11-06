@@ -42,7 +42,6 @@ router.get("/:id", ensureAuth, async (req, res) => {
 
 // Create a new payment
 router.post("/", ensureAuth, async (req, res) => {
-  console.log("m: ", req.body);
   try {
     const m = req.body; // payment
     if (
@@ -59,7 +58,6 @@ router.post("/", ensureAuth, async (req, res) => {
     }
     //req.body.req.user.id;
     const payment = await Payment.create(m);
-    console.log(m);
     if (payment) {
       return res.status(200).send(payment);
     } else {

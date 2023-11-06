@@ -216,7 +216,6 @@ router.post("/registration", ensureAuth, async (req, res) => {
     const info = req.body;
     const response = await ActivityRegister.create(info);
     if (response) {
-      console.log("response from server:", response._message);
       return res.status(200).send(response);
     } else {
       return res

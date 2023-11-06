@@ -67,9 +67,6 @@ router.post('/', ensureAuth, async (req, res) => {
           !m.Street || m.Street.length < 1) {
               return res.status(400).send("Member not valid");
           }
-
-        //req.body.req.user.id;
-        console.log(m);
         const member = await Member.create(m);
         if (member) {
             return res.status(200).send(member);

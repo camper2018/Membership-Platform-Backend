@@ -35,7 +35,7 @@ router.post("/google", async (req, res) => {
       { upsert: true, new: true }
     ).lean();
 
-    console.log(`Looking if user ${user.email} is authorised`);
+    // console.log(`Looking if user ${user.email} is authorised`);
     // const authoriseduser = await AuthorisedUser.findOne({
     //   email: user.email,
     // }).lean();

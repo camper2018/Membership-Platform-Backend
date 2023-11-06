@@ -20,7 +20,6 @@ router.post("/", ensureAuth, async (req, res) => {
     const s = req.body;
     const slides = await Slide.create(s);
     if (slides) {
-      // console.log(slides);
       return res.status(200).send(slides);
     } else {
       return res.status(500);

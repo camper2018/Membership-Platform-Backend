@@ -51,13 +51,12 @@ const createAndUploadFile = async (file) => {
     console.log(e.message);
   }
 };
-
+// Delete image
 const deleteFile = async (fileId) => {
   try {
     const response = await driveService.files.delete({
       fileId: fileId,
     });
-    console.log(`Image deleted successfully!`, response.status);
     return response.status;
   } catch (e) {
     console.log("Error deleting file: ", e.message);

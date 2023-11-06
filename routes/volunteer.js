@@ -37,7 +37,6 @@ router.get("/volunteerByEmail/:email", async (req, res) => {
         //use this function call to get dependents
         .populate("eventId")
         .lean(); //try removing this and look at data
-      console.log("volunteer:", volunteer);
       if (!volunteer) {
         return res.status(404).send("Not found.");
       }
